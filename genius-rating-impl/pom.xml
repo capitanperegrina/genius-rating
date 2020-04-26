@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>com.capitanperegrina</groupId>
+		<artifactId>genius-rating</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	
+	<groupId>com.capitanperegrina.genius-rating</groupId>
+	<artifactId>genius-rating-impl</artifactId>
+	<name>genius-rating-impl</name>
+	<description>Genius Rating Implementation</description>
+	<url>http://www.capitanperegrina.com/genius-rating</url>
+	<packaging>jar</packaging>
+
+	<dependencies>
+
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.2</version>
+				<configuration>
+                    <debug>true</debug>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+
+		</plugins>	
+	</build>  
+</project>
