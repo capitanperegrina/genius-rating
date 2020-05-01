@@ -10,15 +10,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan("com.capitanperegrina.*")
-@PropertySource(value={"classpath:application.properties"})
+@PropertySource(value={"classpath:genius-rating-application.properties"})
+@ComponentScan(basePackages = {"com.capitanperegrina"})
 public class ApplicationContextConfig {
 	
 	@Autowired
@@ -50,13 +50,13 @@ public class ApplicationContextConfig {
 		dataSource.setUsername(this.env.getProperty("spring.datasource.username"));
 		dataSource.setPassword(this.env.getProperty("spring.datasource.password"));
 		return dataSource;
+	} 
+	
+	@Bean(name = "messageSource")
+	public ReloadableResourceBundleMessageSource messageSource() {
+	    ReloadableResourceBundleMessageSource messageBundle = new ReloadableResourceBundleMessageSource();
+	    messageBundle.setBasenames("classpath:genius-rating-messages, classpath:simple-user-messages");
+	    messageBundle.setDefaultEncoding("UTF-8");
+	    return messageBundle;
 	}
- 
-    @Bean(name = "viewResolver")
-    public InternalResourceViewResolver getViewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/jsp/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
 }

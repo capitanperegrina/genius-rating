@@ -19,6 +19,32 @@
 
 	<dependencies>
 
+		<!-- Own -->			
+		<dependency>
+			<groupId>com.capitanperegrina.simple-user</groupId>
+			<artifactId>simple-user-api</artifactId>
+		</dependency>			
+		
+		<dependency>
+			<groupId>com.capitanperegrina.simple-user</groupId>
+			<artifactId>simple-user-impl</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.capitanperegrina.simple-user</groupId>
+			<artifactId>simple-user-util</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.capitanperegrina.simple-user</groupId>
+			<artifactId>simple-user-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.capitanperegrina</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -54,6 +80,32 @@
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+            
+		<dependency>
+		    <groupId>org.apache.tiles</groupId>
+		    <artifactId>tiles-jsp</artifactId>
+		</dependency>
+            
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-taglibs</artifactId>
+		</dependency>
+		
+        <dependency>
+             <groupId>jstl</groupId>
+             <artifactId>jstl</artifactId>
+         </dependency>
+         
+         <dependency>
+             <groupId>taglibs</groupId>
+             <artifactId>standard</artifactId>
+         </dependency>
+         
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
 		</dependency>
 		
 		<!-- Otras -->
@@ -72,6 +124,10 @@
 		    <artifactId>slf4j-simple</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
 	    
 		<dependency>
 		    <groupId>mysql</groupId>
@@ -126,7 +182,7 @@
 				</plugins>
 				<resources>
 					<resource>
-						<directory>src/profiles/resources/desa</directory>
+						<directory>src/profiles/resources/des</directory>
 					</resource>
 				</resources>
 			</build>
@@ -172,7 +228,7 @@
 				</plugins>
 				<resources>
 					<resource>
-						<directory>src/profiles/resources/prod</directory>
+						<directory>src/profiles/resources/pro</directory>
 					</resource>
 				</resources>
 			</build>

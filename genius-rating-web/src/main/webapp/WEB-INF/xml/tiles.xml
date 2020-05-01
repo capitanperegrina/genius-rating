@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition name="template" template="/WEB-INF/jsp/template/adminmart/adminmart.jsp">
+        <put-attribute name="header" value="/WEB-INF/jsp/template/adminmart/parts/header.jsp" />
+        <put-attribute name="aside" value="/WEB-INF/jsp/template/adminmart/parts/aside.jsp" />
+        <put-attribute name="breadcrumb" value="/WEB-INF/jsp/template/adminmart/parts/breadcrumb.jsp" />
+        <put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/parts/content.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/template/adminmart/parts/footer.jsp" />
+    </definition>
+
+    <definition name="message" extends="template">
+		<put-attribute name="content" value="/WEB-INF/jsp/pages/message.jsp" />
+    </definition>
+
+	<definition name="loginForm" template="/WEB-INF/jsp/template/adminmart/pages/login.jsp"/>
+	
+	<definition name="registerForm" template="/WEB-INF/jsp/template/adminmart/pages/register.jsp"/>
+	
+	<definition name="changePassForm" template="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp"/>
+	
+	<definition name="recoverPassInit" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp"/>
+	
+	<definition name="recoverPassExecForm" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassExecForm.jsp"/>
+
+    <definition name="main" extends="template">
+		<put-attribute name="content" value="/WEB-INF/jsp/pages/main.jsp" />
+    </definition>
+
+</tiles-definitions>
