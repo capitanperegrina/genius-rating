@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
+<spring:message code="login.nick.placeholder" var="loginNickPlaceholder"/>
+<spring:message code="login.mail.placeholder" var="loginMailPlaceholder"/>
+<spring:message code="login.password.placeholder" var="loginPasswordPlaceholder"/>
 <!DOCTYPE html>
-<spring:message  code="login.loginString.placeholder" var="loginStringPlaceholder"/>
-<spring:message code="login.password.placeholder" var="passwordPlaceholder"/>
 <html dir="ltr">
 <head>
     <meta charset="utf-8">
@@ -43,38 +44,39 @@
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url(assets/images/big/auth-bg.jpg) no-repeat center center;">
-            <div class="auth-box row">
+            <div class="auth-box row text-center">
                 <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/3.jpg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
-                        <div class="text-center">
-                            <img src="assets/images/big/icon.png" alt="wrapkit">
-                        </div>
-                        <h2 class="mt-3 text-center"><spring:message code="login.signIn"/></h2>
-                        <p class="text-center"><spring:message code="login.help"/></p>
-                        <form class="mt-4">
+                        <img src="assets/images/big/icon.png" alt="wrapkit">
+                        <h2 class="mt-3 text-center"><spring:message code="login.signUp.free"/></h2>
+                        <form:form action="registerRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
+                        	<form:hidden path="operation"/>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="uname"><spring:message code="login.loginString"/></label>
-                                        <input class="form-control" id="uname" type="text" placeholder="${loginStringPlaceholder}">
+										<form:input class="form-control" type="text" path="nick"  id="userForm_nick" placeholder="${loginNickPlaceholder}"/>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="pwd"><spring:message code="login.password"/></label>
-                                        <input class="form-control" id="pwd" type="password" placeholder="${passwordPlaceholder}">
+										<form:input class="form-control" type="email" path="mail"  id="userForm_mail" placeholder="${loginMailPlaceholder}"/>                                    
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+										<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${loginPasswordPlaceholder}"/>                                    
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-block btn-dark"><spring:message code="login.signIn"/></button>
+                                    <button type="submit" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="login.signUp"/></button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    <spring:message code="login.noAccount"/> <a href="register.do" class="text-danger"><spring:message code="login.signUp"/></a>
+                                    <spring:message code="login.signUp.signedUp"/> <a href="#" class="text-danger"><spring:message code="login.signIn"/></a>
                                 </div>
                             </div>
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>
@@ -90,6 +92,8 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="assets/capitanperegrina.js "></script>
+    <script src="assets/libs/simple-user/register.js "></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
