@@ -1,3 +1,87 @@
-	function processResponse( response ) {
-		console.log( reponse );
+function restPost(url, formData, functionOk, functionErr) {
+	$.ajax({
+		type : "POST",
+		contentType : "application/json",
+		url : url,
+        asynt   : true,
+        dataType: 'json',
+		data : JSON.stringify(formData),
+	}).done(function(data) {
+		functionOk(data);
+    }).fail(function(xhr, status, error) {
+    	functionErr(xhr, status, error);
+    });
+}
+
+function processResponse(response, callback) {
+
+	console.log(response);
+	if ( response.message != "" ) {
+		// Text
+		$("#modal-title").html(response.messageTitle);
+		$("#modal-message").html(response.message);
+		
+		// Css
+		$("#common-alert-modal-background").removeClass("modal-filled bg-success bg-danger").addClass(getModalDivClass(response.messageLevel));
+		$("#common-alert-modal-icon").removeClass("text-info text-warning").addClass(getModalIconClass(response.messageLevel));
+		$("#common-alert-modal-button").removeClass("btn-light btn-info btn-warning").addClass(getModalButtonClass(response.messageLevel));
+
+		// Functions
+		if ( response.urlRedirect != null ) {
+			$("#common-alert-modal-button").on("click", function() {
+				document.location = response.urlRedirect;
+			});
+			$("#common-alert-modal").modal('show');
+		} else {
+			$("#common-alert-modal-button").off("click");
+			$("#common-alert-modal").modal('show');
+			callback(response);
+		}
+	} else {
+		if ( response.urlRedirect != "" ) {
+			document.location = response.urlRedirect;
+		}		
 	}
+}
+
+function getModalDivClass( level ) {
+	if ( level == "OK" ) {
+		return "modal-content modal-filled bg-success";
+	} else if ( level == "INFO" ) {
+		return "modal-content";
+	} else if ( level == "WARN" ) {
+		return "modal-content";
+	} else if ( level == "ERROR" ) {
+		return "modal-content modal-filled bg-danger";
+	} else {
+		return "";
+	}
+}
+
+function getModalIconClass( level ) {
+	if ( level == "OK" ) {
+		return "dripicons-checkmark h1";
+	} else if ( level == "INFO" ) {
+		return "dripicons-information h1 text-info";
+	} else if ( level == "WARN" ) {
+		return "dripicons-warning h1 text-warning";
+	} else if ( level == "ERROR" ) {
+		return "dripicons-wrong h1";
+	} else {
+		return "";
+	}
+}
+
+function getModalButtonClass( level ) {
+	if ( level == "OK" ) {
+		return "btn btn-light my-2";
+	} else if ( level == "INFO" ) {
+		return "btn btn-info my-2";
+	} else if ( level == "WARN" ) {
+		return "btn btn-warning my-2";
+	} else if ( level == "ERROR" ) {
+		return "btn btn-light my-2";
+	} else {
+		return "";
+	}
+}

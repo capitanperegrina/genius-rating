@@ -8,24 +8,35 @@
         <put-attribute name="breadcrumb" value="/WEB-INF/jsp/template/adminmart/parts/breadcrumb.jsp" />
         <put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/parts/content.jsp" />
         <put-attribute name="footer" value="/WEB-INF/jsp/template/adminmart/parts/footer.jsp" />
+        <put-attribute name="modals" value="/WEB-INF/jsp/template/adminmart/parts/modals.jsp" />
     </definition>
-
+    
     <definition name="message" extends="template">
 		<put-attribute name="content" value="/WEB-INF/jsp/pages/message.jsp" />
     </definition>
 
-	<definition name="loginForm" template="/WEB-INF/jsp/template/adminmart/pages/login.jsp"/>
-	
-	<definition name="registerForm" template="/WEB-INF/jsp/template/adminmart/pages/register.jsp"/>
-	
+    <definition name="main" extends="template">
+		<put-attribute name="content" value="/WEB-INF/jsp/pages/main.jsp" />
+    </definition>
+
+    <!-- Simple User -->
+    
+    <definition name="pagesTemplate" template="/WEB-INF/jsp/template/adminmart/pagesTemplate.jsp">
+        <put-attribute name="modals" value="/WEB-INF/jsp/template/adminmart/parts/modals.jsp" />
+	</definition>
+
+    <definition name="loginForm" extends="pagesTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/login.jsp" />
+    </definition>    
+
+    <definition name="registerForm" extends="pagesTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/register.jsp" />
+    </definition>
+    
 	<definition name="changePassForm" template="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp"/>
 	
 	<definition name="recoverPassInit" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp"/>
 	
 	<definition name="recoverPassExecForm" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassExecForm.jsp"/>
-
-    <definition name="main" extends="template">
-		<put-attribute name="content" value="/WEB-INF/jsp/pages/main.jsp" />
-    </definition>
 
 </tiles-definitions>
