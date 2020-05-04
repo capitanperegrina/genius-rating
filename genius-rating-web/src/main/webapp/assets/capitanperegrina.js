@@ -14,9 +14,18 @@ function restPost(url, formData, functionOk, functionErr) {
 }
 
 function processResponse(response, callback) {
-
+	debugger;
 	console.log(response);
-	if ( response.message != "" ) {
+	if ( response.validationErrors != null && response.validationErrors.errors != null && response.validationErrors.errors.length > 0 ) { // form validation errors
+		var msg = response.validationErrors.message;
+		var firstControl = "";
+		clearFormValidationErrors();
+		$.each(response.validationErrors.errors, function (index, value) {
+			$("#error_" + value.fieldName).html(value.message);
+		});
+	} 	
+
+	if ( response.message != null ) { // exists message
 		// Text
 		$("#modal-title").html(response.messageTitle);
 		$("#modal-message").html(response.message);
@@ -37,8 +46,8 @@ function processResponse(response, callback) {
 			$("#common-alert-modal").modal('show');
 			callback(response);
 		}
-	} else {
-		if ( response.urlRedirect != "" ) {
+	} else { // no message
+		if ( response.urlRedirect != null ) {
 			document.location = response.urlRedirect;
 		}		
 	}
@@ -84,4 +93,10 @@ function getModalButtonClass( level ) {
 	} else {
 		return "";
 	}
+}
+
+function clearFormValidationErrors() {
+	$(".formError").each(function() {
+		$(this).html('');
+	});	
 }
