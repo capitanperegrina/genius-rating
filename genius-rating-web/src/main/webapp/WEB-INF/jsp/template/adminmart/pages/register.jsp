@@ -34,16 +34,19 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
+										<small id="error_nick" class="badge badge-default badge-danger form-text text-white float-right"></small>
 										<form:input class="form-control" type="text" path="nick"  id="userForm_nick" placeholder="${loginNickPlaceholder}"/>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-										<form:input class="form-control" type="email" path="mail"  id="userForm_mail" placeholder="${loginMailPlaceholder}"/>                                    
+										<small id="error_mail" class="badge badge-default badge-danger form-text text-white float-right"></small>
+										<form:input class="form-control" type="email" path="mail"  id="userForm_mail" placeholder="${loginMailPlaceholder}"/>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
+										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
 										<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${loginPasswordPlaceholder}"/>
                                     </div>
                                 </div>

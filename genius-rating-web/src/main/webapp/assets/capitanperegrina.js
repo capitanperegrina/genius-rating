@@ -14,15 +14,26 @@ function restPost(url, formData, functionOk, functionErr) {
 }
 
 function processResponse(response, callback) {
-	debugger;
 	console.log(response);
 	if ( response.validationErrors != null && response.validationErrors.errors != null && response.validationErrors.errors.length > 0 ) { // form validation errors
-		var msg = response.validationErrors.message;
-		var firstControl = "";
+		var firstControl = null;
 		clearFormValidationErrors();
 		$.each(response.validationErrors.errors, function (index, value) {
+			if ( firstControl != null ) {
+				firstControl = $("#error_" + value.fieldName);
+			}
+			$("#" + response.formName + "_"  + value.fieldName).addClass("is-invalid").on("blur", function() {
+				$("#error_" + value.fieldName).html("");
+				$(this).removeClass("is-invalid");
+				$(this).off("blur");
+			});
 			$("#error_" + value.fieldName).html(value.message);
 		});
+		if ( response.validationErrors.message != null ) {
+			$("#modal-message").html(response.validationErrors.message);
+		};
+		callback(response);
+		firstControl.focus();
 	} 	
 
 	if ( response.message != null ) { // exists message

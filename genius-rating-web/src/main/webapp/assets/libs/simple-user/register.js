@@ -2,10 +2,8 @@ $(document).ready(function(){
 	$('#userForm_submit').click(function(event) {
 		$(this).prop("disabled", true);
 		var callback  = function(response) {
-			$("#userForm_nick").val(response.objects.userForm.nick).focus();
-			$("#userForm_mail").val(response.objects.userForm.mail);
-			$("#userForm_pass").val(response.objects.userForm.pass);
-			$(this).prop("disabled", true);
+			$("#userForm_pass").val("");
+			$('#userForm_submit').prop("disabled", false);
 		}
 		var formData = {
 				nick : $("#userForm_nick").val(),
