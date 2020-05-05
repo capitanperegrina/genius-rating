@@ -43,4 +43,14 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
 		ret.setMessage(this.messageSource.getMessage(e.getMessage(), null, LocaleContextHolder.getLocale()));
 		return new ResponseEntity<>(ret, HttpStatus.OK);
     }
+    
+    @ExceptionHandler(RuntimeException.class)
+    @ResponseBody
+    public ResponseEntity<RestResponseUI> handleRuntimeException(RuntimeException e) throws IOException {
+    	RestResponseUI ret = new RestResponseUI();
+		ret.setMessageLevel(RestResponseMessageLevels.ERROR);
+		ret.setMessageTitle(this.messageSource.getMessage(SimpleUserMessagesNaming.SIMPLE_USER_MESSAGE_TITLE, null, LocaleContextHolder.getLocale()));
+		ret.setMessage(this.messageSource.getMessage(SimpleUserMessagesNaming.SIMPLE_USER_RUNTIME_EXCEPTION, null, LocaleContextHolder.getLocale()));    	
+		return new ResponseEntity<>(ret, HttpStatus.OK);
+    }    
 }
