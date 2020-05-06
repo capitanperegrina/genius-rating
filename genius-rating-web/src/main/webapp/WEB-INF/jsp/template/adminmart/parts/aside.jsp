@@ -13,8 +13,14 @@
                             <span class="hide-menu">Menu</span>
                         </li>
                         <li class="sidebar-item"><a class="sidebar-link" href="boatList.do" aria-expanded="false"><i class="fas fa-book"></i><span class="hide-menu">Boat List</span></a></li>
+<c:if test="${request_simpleUserManagementLogged != null}">                        
+                        <li class="sidebar-item"><a class="sidebar-link" href="myBoats.do" aria-expanded="false"><i class="fas fa-book"></i><span class="hide-menu">My Boats</span></a></li>
+                        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="logout.do" aria-expanded="false"><i class="fas fa-key"></i><span class="hide-menu">Logout</span></a></li>
+</c:if>
+<c:if test="${request_simpleUserManagementLogged == null}">
                         <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="login.do" aria-expanded="false"><i class="fas fa-key"></i><span class="hide-menu">Login</span></a></li>
                         <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="register.do" aria-expanded="false"><i class="fas fa-edit"></i><span class="hide-menu">Sign up</span></a></li>
+</c:if>                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

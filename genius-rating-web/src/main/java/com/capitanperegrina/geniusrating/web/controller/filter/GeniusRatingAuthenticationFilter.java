@@ -1,0 +1,85 @@
+package com.capitanperegrina.geniusrating.web.controller.filter;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.GenericFilterBean;
+
+import com.capitanperegrina.simpleuser.web.naming.SimpleUserWebNaming;
+import com.capitanperegrina.simpleuser.web.ui.UserUI;
+import com.capitanperegrina.utils.net.social.Gravatar;
+
+@Component("authenticationFilter")
+public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
+
+	// TODO - Read this from somwhere
+    private final List<String> publicActions = new ArrayList<>();
+    private final List<String> privateActions = new ArrayList<>();
+
+    @Override
+    public void destroy() {
+    	// Do nothing
+    }
+
+    @Override
+    public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain chain)
+            throws IOException, ServletException {
+
+        final HttpServletRequest httpRequest = (HttpServletRequest) request;
+
+        final UserUI u = (UserUI) httpRequest.getSession().getAttribute(SimpleUserWebNaming.SESSION_LOGGED_USER);
+        if (u == null) {
+            request.setAttribute(SimpleUserWebNaming.REQUEST_LOGGED, null);
+            if (!this.publicActions.contains(httpRequest.getServletPath())) {
+                final HttpServletResponse httpResponse = (HttpServletResponse) response;
+                httpResponse.sendRedirect("login.do");
+                return;
+            }
+        } else {
+            request.setAttribute(SimpleUserWebNaming.REQUEST_LOGGED, "S");
+            request.setAttribute(SimpleUserWebNaming.REQUEST_USER, u);
+            request.setAttribute("gravatarMd5", Gravatar.md5Hex(u.getMail()));
+        }
+
+        String qs = "";
+        if (!StringUtils.isEmpty(httpRequest.getQueryString())) {
+            qs = "&" + httpRequest.getQueryString();
+        }
+        request.setAttribute("queryString", qs);
+        chain.doFilter(request, response);
+    }
+
+    /*
+     * (non-Javadoc)
+     *
+     * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
+     */
+    @PostConstruct
+    public void init() {
+        this.publicActions.add("/main.do");
+        this.publicActions.add("/login.do");
+        this.publicActions.add("/loginRest.do");
+        this.publicActions.add("/register.do");
+        this.publicActions.add("/registerRest.do");
+        this.publicActions.add("/changePass.do");
+        this.publicActions.add("/changePassRest.do");
+        
+        this.privateActions.add("/logout.action");
+        this.privateActions.add("/recoverPassInit.do");
+        this.privateActions.add("/recoverPassInitRest.do");
+        this.privateActions.add("/recoverPassExec.do");
+        this.privateActions.add("/recoverPassExecRest.do");
+    }
+}

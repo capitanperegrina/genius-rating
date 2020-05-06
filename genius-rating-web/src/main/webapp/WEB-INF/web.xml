@@ -28,7 +28,7 @@
 		</cookie-config>
 	</session-config>
 
-<!-- 
+ 
 	<filter>
   		<filter-name>authenticationFilter</filter-name>
   		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -46,7 +46,17 @@
     		<param-value>interfazUsuarioFilter</param-value>
   		</init-param>
 	</filter>	
+	
+	<filter-mapping>
+		<filter-name>authenticationFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
 
+	<filter-mapping>
+		<filter-name>interfazUsuarioFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>	
+<!--
 	<filter>
 		<filter-name>applicationFilter</filter-name>
 		<filter-class>com.capitanperegrina.common.web.filters.ApplicationFilter</filter-class>

@@ -50,7 +50,7 @@ public class ApplicationContextConfig {
 		dataSource.setUsername(this.env.getProperty("spring.datasource.username"));
 		dataSource.setPassword(this.env.getProperty("spring.datasource.password"));
 		return dataSource;
-	} 
+	}
 	
 	@Bean(name = "messageSource")
 	public ReloadableResourceBundleMessageSource messageSource() {
