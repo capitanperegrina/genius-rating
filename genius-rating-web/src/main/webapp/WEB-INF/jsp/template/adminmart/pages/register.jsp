@@ -54,7 +54,7 @@
                                     <button type="submit" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="login.signUp"/></button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    <spring:message code="login.signUp.signedUp"/> <a href="#" class="text-danger"><spring:message code="login.signIn"/></a>
+                                    <spring:message code="login.signUp.signedUp"/> <a href="login.do" class="text-danger"><spring:message code="login.signIn"/></a>
                                 </div>
                             </div>
                         </form:form>

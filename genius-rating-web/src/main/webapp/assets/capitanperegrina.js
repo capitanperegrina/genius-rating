@@ -1,3 +1,17 @@
+function restGet(url, functionOk, functionErr) {
+	$.ajax({
+		type : "GET",
+		contentType : "application/json",
+		url : url,
+        asynt   : true,
+        dataType: 'json'
+	}).done(function(data) {
+		functionOk(data);
+    }).fail(function(xhr, status, error) {
+    	functionErr(xhr, status, error);
+    });
+}
+
 function restPost(url, formData, functionOk, functionErr) {
 	$.ajax({
 		type : "POST",
@@ -14,7 +28,10 @@ function restPost(url, formData, functionOk, functionErr) {
 }
 
 function processResponse(response, callback) {
-	console.log(response);
+	if ( callback == null ) {
+		callback = function() {};
+	}
+	debugger;
 	if ( response.validationErrors != null && response.validationErrors.errors != null && response.validationErrors.errors.length > 0 ) { // form validation errors
 		var firstControl = null;
 		clearFormValidationErrors();

@@ -31,6 +31,10 @@
 
     <definition name="registerForm" extends="pagesTemplate">
 		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/register.jsp" />
+    </definition>    
+
+    <definition name="recoverPassInitForm" extends="pagesTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp" />
     </definition>
     
 	<definition name="changePassForm" template="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp"/>

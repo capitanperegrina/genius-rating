@@ -75,5 +75,9 @@
     <script src="assets/extra-libs/jvector/jquery-jvectormap-2.0.2.min.js"></script>
     <script src="assets/extra-libs/jvector/jquery-jvectormap-world-mill-en.js"></script>
     <script src="dist/js/pages/dashboards/dashboard1.min.js"></script>
+    <script src="assets/capitanperegrina.js "></script>
+<c:if test="${request_simpleUserManagementLogged != null}">
+    <script src="assets/libs/simple-user/logout.js "></script>	
+</c:if>
 </body>
 </html>

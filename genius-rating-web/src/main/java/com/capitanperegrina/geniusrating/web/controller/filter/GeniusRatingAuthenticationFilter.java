@@ -75,11 +75,10 @@ public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
         this.publicActions.add("/registerRest.do");
         this.publicActions.add("/changePass.do");
         this.publicActions.add("/changePassRest.do");
-        
-        this.privateActions.add("/logout.action");
-        this.privateActions.add("/recoverPassInit.do");
-        this.privateActions.add("/recoverPassInitRest.do");
-        this.privateActions.add("/recoverPassExec.do");
-        this.privateActions.add("/recoverPassExecRest.do");
+        this.publicActions.add("/logoutRest.do");
+        this.publicActions.add("/recoverPassInit.do");
+        this.publicActions.add("/recoverPassInitRest.do");
+        this.publicActions.add("/recoverPassExec.do");
+        this.publicActions.add("/recoverPassExecRest.do");
     }
 }
