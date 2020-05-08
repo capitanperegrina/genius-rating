@@ -1,4 +1,7 @@
 
+	var LARGE = "lg";
+	var SMALL = "sm";
+	
 	function restGet(url, functionOk, functionErr) {
 		$.ajax({
 			type : "GET",
@@ -53,13 +56,19 @@
 			callback(response);
 			firstControl.focus();
 		} 	
-	
+
+		
+		
 		if ( response.message != null ) { // exists message
 			// Text
 			$("#modal-title").html(response.messageTitle);
 			$("#modal-message").html(response.message);
 			
 			// Css
+			if ( size == null ) {
+				size = "sm";
+			}
+			$("#common-alert-modal-size").removeClass("modal-sm modal-lg").addClass("modal-" + size);
 			$("#common-alert-modal-background").removeClass("modal-filled bg-success bg-danger").addClass(getModalDivClass(response.messageLevel));
 			$("#common-alert-modal-icon").removeClass("text-info text-warning").addClass(getModalIconClass(response.messageLevel));
 			$("#common-alert-modal-button").removeClass("btn-light btn-info btn-warning").addClass(getModalButtonClass(response.messageLevel));
@@ -128,4 +137,34 @@
 		$(".formError").each(function() {
 			$(this).html('');
 		});	
+	}
+	
+	function showModal( size, level, title, message, urlRedirect, callbackFunction ) {
+		// Text
+		$("#modal-title").html(title);
+		$("#modal-message").html(message);
+		
+		// Css
+		var _size = size;
+		if ( _size == null ) {
+			_size = SMALL;
+		}
+		$("#common-alert-modal-size").removeClass("modal-sm modal-lg").addClass("modal-" + _size);
+		$("#common-alert-modal-background").removeClass("modal-filled bg-success bg-danger").addClass(getModalDivClass(level));
+		$("#common-alert-modal-icon").removeClass("text-info text-warning").addClass(getModalIconClass(level));
+		$("#common-alert-modal-button").removeClass("btn-light btn-info btn-warning").addClass(getModalButtonClass(level));
+
+		// Functions
+		if ( urlRedirect != null ) {
+			$("#common-alert-modal-button").on("click", function() {
+				document.location = urlRedirect;
+			});
+			$("#common-alert-modal").modal('show');
+		} else {
+			$("#common-alert-modal-button").off("click");
+			$("#common-alert-modal").modal('show');
+		}
+		if ( callbackFunction != null ) {
+			callbackFunction();
+		}
 	}

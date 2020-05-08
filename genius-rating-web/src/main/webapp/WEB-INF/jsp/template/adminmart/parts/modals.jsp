@@ -3,7 +3,11 @@
 
 	<!-- Success Alert Modal -->
 	<div id="common-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-	    <div class="modal-dialog modal-sm">
+	    <div class="modal-dialog" id="common-alert-modal-size">
+	    <!-- 
+	    	modal-sm
+	    	modal-lg 
+	    -->
 	        <div id="common-alert-modal-background"> 
 	        <!-- 
 	        	modal-content modal-filled bg-success
