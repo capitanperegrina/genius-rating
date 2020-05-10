@@ -65,10 +65,7 @@
 			$("#modal-message").html(response.message);
 			
 			// Css
-			if ( size == null ) {
-				size = "sm";
-			}
-			$("#common-alert-modal-size").removeClass("modal-sm modal-lg").addClass("modal-" + size);
+			$("#common-alert-modal-size").removeClass("modal-sm modal-lg").addClass("modal-sm");
 			$("#common-alert-modal-background").removeClass("modal-filled bg-success bg-danger").addClass(getModalDivClass(response.messageLevel));
 			$("#common-alert-modal-icon").removeClass("text-info text-warning").addClass(getModalIconClass(response.messageLevel));
 			$("#common-alert-modal-button").removeClass("btn-light btn-info btn-warning").addClass(getModalButtonClass(response.messageLevel));

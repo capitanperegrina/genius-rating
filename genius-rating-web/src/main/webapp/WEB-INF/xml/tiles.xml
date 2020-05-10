@@ -6,13 +6,15 @@
         <put-attribute name="header" value="/WEB-INF/jsp/template/adminmart/parts/header.jsp" />
         <put-attribute name="aside" value="/WEB-INF/jsp/template/adminmart/parts/aside.jsp" />
         <put-attribute name="breadcrumb" value="/WEB-INF/jsp/template/adminmart/parts/breadcrumb.jsp" />
-        <put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/parts/content.jsp" />
+        <put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/parts/blank.jsp" />
         <put-attribute name="footer" value="/WEB-INF/jsp/template/adminmart/parts/footer.jsp" />
         <put-attribute name="modals" value="/WEB-INF/jsp/template/adminmart/parts/modals.jsp" />
+        <put-attribute name="javasctipt" value="/WEB-INF/jsp/template/adminmart/parts/blank.jsp" />
+        <put-attribute name="changePass" value="/WEB-INF/jsp/template/adminmart/parts/changePass.jsp" />
     </definition>
     
     <definition name="message" extends="template">
-		<put-attribute name="content" value="/WEB-INF/jsp/pages/message.jsp" />
+		<put-attribute name="javasctipt" value="/WEB-INF/jsp/pages/message.jsp" />
     </definition>
 
     <definition name="main" extends="template">
@@ -35,12 +37,14 @@
 
     <definition name="recoverPassInitForm" extends="pagesTemplate">
 		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp" />
+    </definition>    
+
+    <definition name="recoverPassExecForm" extends="pagesTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/recoverPassExec.jsp" />
     </definition>
     
 	<definition name="changePassForm" template="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp"/>
 	
 	<definition name="recoverPassInit" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp"/>
-	
-	<definition name="recoverPassExecForm" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassExecForm.jsp"/>
 
 </tiles-definitions>

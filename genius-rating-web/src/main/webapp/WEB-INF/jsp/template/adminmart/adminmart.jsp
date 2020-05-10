@@ -56,6 +56,9 @@
 			</footer>
         </div>
     </div>
+<c:if test="${request_simpleUserManagementLogged != null}">
+<tiles:insertAttribute name="changePass" />
+</c:if>    
     <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -79,5 +82,7 @@
 <c:if test="${request_simpleUserManagementLogged != null}">
     <script src="assets/libs/simple-user/logout.js "></script>	
 </c:if>
+<tiles:insertAttribute name="modals" />
+<tiles:insertAttribute name="javasctipt" />
 </body>
 </html>
