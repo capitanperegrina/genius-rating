@@ -17,8 +17,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<com.capitanperegrina.genius-rating.version>${project.version}</com.capitanperegrina.genius-rating.version>
 		<com.capitanperegrina.simple-user.version>0.1-SNAPSHOT</com.capitanperegrina.simple-user.version>
+		<com.capitanperegrina.genius-rating.version>0.1-SNAPSHOT</com.capitanperegrina.genius-rating.version>
 		<com.capitanperegrina.utils.version>0.1-SNAPSHOT</com.capitanperegrina.utils.version>
-		<spring.version>5.2.1.RELEASE</spring.version>
+		<spring.version>5.2.6.RELEASE</spring.version>
 		<tiles.version>3.0.8</tiles.version>
 	</properties>
 
@@ -32,7 +33,13 @@
     
         <dependencies>
         
-			<!-- Own -->			
+			<!-- Own -->
+			<dependency>
+				<groupId>com.capitanperegrina.genius-rating</groupId>
+				<artifactId>genius-rating-api</artifactId>
+				<version>${com.capitanperegrina.genius-rating.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.capitanperegrina.simple-user</groupId>
 				<artifactId>simple-user-api</artifactId>
@@ -100,19 +107,6 @@
                 <version>${spring.version}</version>
 			</dependency>
 			
-			<!-- Validation -->
-			<dependency>
-			    <groupId>javax.validation</groupId>
-			    <artifactId>validation-api</artifactId>
-			    <version>2.0.1.Final</version>
-			</dependency>
-			
-			<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-validator</artifactId>
-			    <version>5.4.3.Final</version>
-			</dependency>
-			
 		    <!-- Jackson JSON Mapper -->
 			<dependency>
 			    <groupId>org.codehaus.jackson</groupId>
@@ -148,7 +142,7 @@
 			<dependency>
 			    <groupId>org.springframework.security</groupId>
 			    <artifactId>spring-security-taglibs</artifactId>
-			    <version>${spring.version}</version>
+			    <version>5.2.1.RELEASE</version>
 			</dependency>
 
             <dependency>
@@ -170,6 +164,12 @@
 			</dependency>
 			
 			<!-- Otras -->
+			<dependency>
+			    <groupId>org.apache.commons</groupId>
+			    <artifactId>commons-lang3</artifactId>
+			    <version>3.10</version>
+			</dependency>
+
 			<dependency>
 			    <groupId>commons-dbcp</groupId>
 			    <artifactId>commons-dbcp</artifactId>
