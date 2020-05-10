@@ -56,6 +56,9 @@
                                 <div class="col-lg-12 text-center mt-5">
                                     <spring:message code="login.signUp.signedUp"/> <a href="login.do" class="text-danger"><spring:message code="login.signIn"/></a>
                                 </div>
+                                <div class="col-lg-12 text-center mt-5">
+                                    <a href="javascript:history.back();" class="text-danger"><spring:message code="simpleUser.back"/></a>
+                                </div>
                             </div>
                         </form:form>
                     </div>

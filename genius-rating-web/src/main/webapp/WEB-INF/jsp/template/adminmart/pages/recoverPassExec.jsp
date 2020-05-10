@@ -45,7 +45,7 @@
                                 	<button type="submit" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="recoverPass.exec.button"/></button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    <spring:message code="login.noPassword"/> <a href="register.do" class="text-danger"><spring:message code="login.signUp"/></a>
+                                    <a href="javascript:history.back();" class="text-danger"><spring:message code="simpleUser.back"/></a> / <spring:message code="login.noPassword"/> <a href="register.do" class="text-danger"><spring:message code="login.signUp"/></a>
                                 </div>
                             </div>
                         </form:form>

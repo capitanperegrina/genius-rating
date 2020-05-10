@@ -16,10 +16,7 @@
 <c:if test="${request_simpleUserManagementLogged != null}">
                         <li class="sidebar-item"><a class="sidebar-link" href="myBoats.do" aria-expanded="false"><i class="fas fa-book"></i><span class="hide-menu">My Boats</span></a></li>
 						<li class="list-divider"></li>                        
-                        <li class="sidebar-item"><a class="sidebar-link" href="#" aria-expanded="false" data-toggle="modal" data-target="#changePass-modal"><i class="fas fa-edit"></i><span class="hide-menu">Change Password</span></a></li>
-                        
-                       
-                                                
+                        <li class="sidebar-item"><a class="sidebar-link" href="changePass.do" aria-expanded="false"><i class="fas fa-edit"></i><span class="hide-menu">Change Password</span></a></li>
                         <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="#" aria-expanded="false" id="menuLink_logout"><i class="fas fa-power-off"></i><span class="hide-menu">Logout</span></a></li>
 </c:if>
 <c:if test="${request_simpleUserManagementLogged == null}">

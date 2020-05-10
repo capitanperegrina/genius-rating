@@ -10,7 +10,6 @@
         <put-attribute name="footer" value="/WEB-INF/jsp/template/adminmart/parts/footer.jsp" />
         <put-attribute name="modals" value="/WEB-INF/jsp/template/adminmart/parts/modals.jsp" />
         <put-attribute name="javasctipt" value="/WEB-INF/jsp/template/adminmart/parts/blank.jsp" />
-        <put-attribute name="changePass" value="/WEB-INF/jsp/template/adminmart/parts/changePass.jsp" />
     </definition>
     
     <definition name="message" extends="template">
@@ -43,8 +42,8 @@
 		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/recoverPassExec.jsp" />
     </definition>
     
-	<definition name="changePassForm" template="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp"/>
-	
-	<definition name="recoverPassInit" template="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp"/>
+    <definition name="changePassForm" extends="pagesTemplate">
+		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp" />
+    </definition>
 
 </tiles-definitions>
