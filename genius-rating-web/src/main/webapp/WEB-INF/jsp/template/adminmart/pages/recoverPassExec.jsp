@@ -29,7 +29,7 @@
                         </div>
                         <h2 class="mt-3 text-center"><spring:message code="login.recover"/></h2>
                         <p class="text-center"><spring:message code="recoverPass.exec.help"/></p>
-                        <form:form action="recoverPassExectRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
+                        <form:form action="recoverPassExecRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
                         	<form:hidden path="operation" id="userForm_operation"/>                        
                         	<form:hidden path="mail" id="userForm_mail"/>
                         	<form:hidden path="recoverCode" id="userForm_recoverCode"/>
@@ -38,7 +38,12 @@
                                     <div class="form-group">
                                         <label class="text-dark" for="pwd"><spring:message code="login.password"/></label>
 										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
-										<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${passwordPlaceholder}"/>
+										<div class="input-group" id="show_hide_password">
+											<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${passwordPlaceholder}"/>
+											<div class="input-group-append">
+                                            	<div class="form-control" id="show_hide_password_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                        	</div>
+        								</div>
                                     </div>
                                 </div>                            
                                 <div class="col-lg-12 text-center">

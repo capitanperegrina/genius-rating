@@ -19,7 +19,17 @@
 
 	<dependencies>
 
-		<!-- Own -->			
+		<!-- Own -->
+		<dependency>
+			<groupId>com.capitanperegrina.genius-rating</groupId>
+			<artifactId>genius-rating-api</artifactId>
+		</dependency>
+       
+		<dependency>
+			<groupId>com.capitanperegrina.genius-rating</groupId>
+			<artifactId>genius-rating-impl</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>com.capitanperegrina.simple-user</groupId>
 			<artifactId>simple-user-api</artifactId>
@@ -176,9 +186,9 @@
 
 	<profiles>
 		<profile>
-			<id>des</id>
+			<id>dev</id>
 			<build>
-				<finalName>genius-rating-web-des</finalName>
+				<finalName>genius-rating-web-dev</finalName>
 				<plugins>
 					<plugin>
 						<groupId>org.apache.tomcat.maven</groupId>
@@ -187,13 +197,13 @@
 						<configuration>
 							<url>http://localhost:8080/manager/text</url>
 							<server>TomcatServer</server>
-							<path>/geniusRating-desa</path>
+							<path>/geniusRating-dev</path>
 						</configuration>
 					</plugin>
 				</plugins>
 				<resources>
 					<resource>
-						<directory>src/profiles/resources/des</directory>
+						<directory>src/profiles/resources/dev</directory>
 					</resource>
 				</resources>
 			</build>

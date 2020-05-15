@@ -47,7 +47,12 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
 										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
-										<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${loginPasswordPlaceholder}"/>
+										<div class="input-group" id="show_hide_password">
+											<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${loginPasswordPlaceholder}"/>
+											<div class="input-group-append">
+                                            	<div class="form-control" id="show_hide_password_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                        	</div>
+        								</div>											
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">

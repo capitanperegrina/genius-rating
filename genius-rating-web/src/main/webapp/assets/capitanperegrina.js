@@ -35,7 +35,6 @@
 		if ( callback == null ) {
 			callback = function() {};
 		}
-		debugger;
 		if ( response.validationErrors != null && response.validationErrors.errors != null && response.validationErrors.errors.length > 0 ) { // form validation errors
 			var firstControl = null;
 			clearFormValidationErrors();
@@ -164,4 +163,19 @@
 		if ( callbackFunction != null ) {
 			callbackFunction();
 		}
+	}
+
+	function configurePasswordFieldButton( paswordDivSelector ) {
+	    $("#" + paswordDivSelector + "_btn").on('click', function(event) {
+	        event.preventDefault();
+	        if($("#" + paswordDivSelector + " input").attr("type") == "text"){
+	            $("#" + paswordDivSelector + " input").attr('type', 'password');
+	            $("#" + paswordDivSelector + " i").addClass( "fa-eye-slash" );
+	            $("#" + paswordDivSelector + " i").removeClass( "fa-eye" );
+	        }else if($("#" + paswordDivSelector + " input").attr("type") == "password"){
+	            $("#" + paswordDivSelector + " input").attr('type', 'text');
+	            $("#" + paswordDivSelector + " i").removeClass( "fa-eye-slash" );
+	            $("#" + paswordDivSelector + " i").addClass( "fa-eye" );
+	        }
+	    });
 	}

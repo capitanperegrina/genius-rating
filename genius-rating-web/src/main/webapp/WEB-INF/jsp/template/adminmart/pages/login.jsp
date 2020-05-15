@@ -45,7 +45,12 @@
                                     <div class="form-group">
                                         <label class="text-dark" for="userForm_pass"><spring:message code="login.password"/></label>
 										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
-										<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${passwordPlaceholder}"/>
+										<div class="input-group" id="show_hide_password">
+											<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${passwordPlaceholder}"/>
+											<div class="input-group-append">
+                                            	<div class="form-control" id="show_hide_password_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                        	</div>
+        								</div>										
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
@@ -75,7 +80,7 @@
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="assets/capitanperegrina.js "></script>
-    <script src="assets/libs/simple-user/register.js "></script>    
+    <script src="assets/libs/simple-user/login.js "></script>    
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

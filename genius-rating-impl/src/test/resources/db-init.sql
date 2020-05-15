@@ -14,7 +14,7 @@ CREATE TABLE `user` (
 	ip							VARCHAR(39),
 	login_fails					INTEGER DEFAULT 0 NOT NULL, 
 	recover_code				VARCHAR(10),
-	recover_code_expire_data	DATE,
+	recover_code_expire_data	DATETIME,
 	created_by					INTEGER NOT NULL,
 	created_date				DATETIME NOT NULL,
 	modified_by					INTEGER NOT NULL,

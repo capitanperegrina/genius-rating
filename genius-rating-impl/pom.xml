@@ -22,6 +22,16 @@
 			<groupId>com.capitanperegrina.genius-rating</groupId>
 			<artifactId>genius-rating-api</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.capitanperegrina.simple-user</groupId>
+			<artifactId>simple-user-util</artifactId>
+		</dependency>		
+		
+		<dependency>
+			<groupId>com.capitanperegrina.simple-user</groupId>
+			<artifactId>simple-user-api</artifactId>
+		</dependency>
 			
 		<dependency>
 			<groupId>com.capitanperegrina</groupId>

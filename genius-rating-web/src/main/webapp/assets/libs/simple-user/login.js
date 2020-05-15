@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	configurePasswordFieldButton("show_hide_password");
+	
 	$('#userForm_submit').click(function(event) {
 		$(this).prop("disabled", true);
 		var callback  = function(response) {

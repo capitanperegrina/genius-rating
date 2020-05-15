@@ -39,6 +39,12 @@
 				<artifactId>genius-rating-api</artifactId>
 				<version>${com.capitanperegrina.genius-rating.version}</version>
 			</dependency>
+        
+			<dependency>
+				<groupId>com.capitanperegrina.genius-rating</groupId>
+				<artifactId>genius-rating-impl</artifactId>
+				<version>${com.capitanperegrina.genius-rating.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>com.capitanperegrina.simple-user</groupId>

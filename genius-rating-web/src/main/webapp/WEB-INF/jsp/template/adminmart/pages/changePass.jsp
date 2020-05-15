@@ -38,14 +38,24 @@
                                     <div class="form-group">
                                         <label class="text-dark" for="userForm_pass"><spring:message code="passwordChange.old.pass"/></label>
 										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
-                                        <form:input class="form-control" type="password" path="pass"  id="userForm_pass" placeholder="${oldPassPlaceholder}"/>
+										<div class="input-group" id="show_hide_password1">
+											<form:input class="form-control" type="password" path="pass"  id="userForm_pass" placeholder="${oldPassPlaceholder}"/>
+											<div class="input-group-append">
+                                            	<div class="form-control" id="show_hide_password1_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                        	</div>
+        								</div>										
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label class="text-dark" for="userForm_recoverCode"><spring:message code="passwordChange.new.pass"/></label>
 										<small id="error_recoverCode" class="badge badge-default badge-danger form-text text-white float-right"></small>
-										<form:input class="form-control" type="password" path="recoverCode" id="userForm_recoverCode" placeholder="${newPassPlaceholder}"/>
+										<div class="input-group" id="show_hide_password2">
+											<form:input class="form-control" type="password" path="recoverCode" id="userForm_recoverCode" placeholder="${newPassPlaceholder}"/>
+											<div class="input-group-append">
+                                            	<div class="form-control" id="show_hide_password2_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                        	</div>
+        								</div>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
