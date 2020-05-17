@@ -18,10 +18,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @PropertySource(value={"classpath:genius-rating-application.properties"})
-@ComponentScan(basePackages = {"com.capitanperegrina"})
 public class ApplicationContextConfig {
 	
-	@Autowired
+	@Autowired(required=false)
 	private Environment env;
 
 	@Value("${init-db:false}")

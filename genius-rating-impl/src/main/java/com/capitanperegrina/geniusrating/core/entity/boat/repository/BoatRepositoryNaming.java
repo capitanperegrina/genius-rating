@@ -24,4 +24,8 @@ public class BoatRepositoryNaming {
     public static final String KEY = "key";
     public static final String VALUE = "value";
     public static final String TYPE = "type";
+    
+    public static final String LOA = "loa";
+    public static final String NUM_S = "num_s";
+    public static final String RATING = "rating";
 }

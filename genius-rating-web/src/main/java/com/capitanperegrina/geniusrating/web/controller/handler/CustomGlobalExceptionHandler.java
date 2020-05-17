@@ -21,7 +21,7 @@ import com.capitanperegrina.utils.exception.ServiceException;
 @ControllerAdvice
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-	@Autowired
+	@Autowired(required=false)
 	private MessageSource messageSource;
 	
     @ExceptionHandler(ServiceErrorException.class)

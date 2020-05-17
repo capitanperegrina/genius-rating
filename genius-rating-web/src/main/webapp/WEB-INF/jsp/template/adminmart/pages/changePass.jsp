@@ -82,7 +82,7 @@
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="assets/capitanperegrina.js "></script>
-    <script src="assets/libs/simple-user/changePass.js "></script>    
+    <script src="assets/libs/simple-user/changePass.js "></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

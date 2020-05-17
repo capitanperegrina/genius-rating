@@ -36,7 +36,7 @@ public class GeniusRatingUserInterfaceFilter extends GenericFilterBean {
 		request.setAttribute("queryString", qs);
 		chain.doFilter(request, response);
 		
-		request.setAttribute(SimpleUserWebNaming.REQUEST_APPVERSION, VersionUtils.obtenVersion());
-		request.setAttribute(SimpleUserWebNaming.REQUEST_LANG, LocaleContextHolder.getLocale().getLanguage());
+		httpRequest.getSession().setAttribute(SimpleUserWebNaming.REQUEST_APPVERSION, VersionUtils.obtenVersion());
+		httpRequest.getSession().setAttribute(SimpleUserWebNaming.REQUEST_LANG, LocaleContextHolder.getLocale().getLanguage());
 	}
 }

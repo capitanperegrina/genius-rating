@@ -68,6 +68,7 @@ public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
      */
     @PostConstruct
     public void init() {
+    	// Simple User
         this.publicActions.add("/main.do");
         this.publicActions.add("/login.do");
         this.publicActions.add("/loginRest.do");
@@ -79,6 +80,13 @@ public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
         this.publicActions.add("/recoverPassExec.do");
         this.publicActions.add("/recoverPassExecRest.do");
         
+        // Genius Rating
+        this.publicActions.add("/boatList.do");
+        
+    	// Simple User
         this.privateActions.add("/changePassRest.do");
+        
+        // Genius Rating
+        this.publicActions.add("/myBoats.do");        
     }
 }

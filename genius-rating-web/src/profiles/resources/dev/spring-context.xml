@@ -20,8 +20,21 @@
 
   	<context:annotation-config/>
 
-	<!-- Scans the classpath of this application for @Components to deploy as beans -->
-	<context:component-scan base-package="com.capitanperegrina" />
+	<!-- Scans the classpath of this application for @Components to deploy as beans --> 
+	<context:component-scan base-package="com.capitanperegrina.*"/>
+		<!-- com.capitanperegrina.simpleuser.core.entity.user.repository-UserRepositoryImpl,
+		com.capitanperegrina.simpleuser.core.service.mailer.impl.CustomSimpleUserOperationsMailServiceImpl,
+		com.capitanperegrina.simpleuser.core.service.user.impl.UserServiceImpl,
+
+		com.capitanperegrina.geniusrating.core.entity.boat.repository.BoatDataRepositoryImpl,
+		com.capitanperegrina.geniusrating.core.entity.boat.repository.BoatRepositoryImpl,
+
+		com.capitanperegrina.geniusrating.core.service.boat.impl.BoatServiceImpl,
+
+		com.capitanperegrina.geniusrating.core.view.boatListView.repository.impl.BoatListRepositoryImpl,
+
+		com.capitanperegrina.geniusrating.web.controller.filter.GeniusRatingAuthenticationFilter,
+		com.capitanperegrina.geniusrating.web.controller.filter.GeniusRatingUserInterfaceFilter" /> -->
 	
 	<!-- Configures the @Controller programming model -->
 	<mvc:annotation-driven/>

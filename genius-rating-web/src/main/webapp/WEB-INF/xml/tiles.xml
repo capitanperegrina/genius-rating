@@ -20,6 +20,12 @@
 		<put-attribute name="content" value="/WEB-INF/jsp/pages/main.jsp" />
     </definition>
 
+    <definition name="boatList" extends="template">
+		<put-attribute name="content" value="/WEB-INF/jsp/pages/boatList.jsp" />
+    </definition>
+    
+    
+
     <!-- Simple User -->
     
     <definition name="pagesTemplate" template="/WEB-INF/jsp/template/adminmart/pagesTemplate.jsp">

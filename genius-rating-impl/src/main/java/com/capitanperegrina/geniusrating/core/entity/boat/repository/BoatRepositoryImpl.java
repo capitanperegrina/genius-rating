@@ -58,7 +58,7 @@ public class BoatRepositoryImpl extends GenericRepository implements BoatReposit
 	    }
 	};    
     
-    @Autowired
+    @Autowired(required=false)
     private JdbcTemplate jdbcTemplate;
 
     private static Object[] toParamsAll( Boat obj ) {
