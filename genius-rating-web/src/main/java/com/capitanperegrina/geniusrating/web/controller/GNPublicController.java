@@ -35,6 +35,7 @@ public class GNPublicController {
 		List<BoatListView> boats = this.boatService.findAll(2020);
 		request.setAttribute("boats", boats);
 		// TODO - Why this shit is not set in the filter?
+		request.setAttribute("allBoats", Boolean.TRUE);
 		request.setAttribute(SimpleUserWebNaming.REQUEST_LANG, LocaleContextHolder.getLocale().getLanguage());
 		return "boatList";
 	}
@@ -43,6 +44,7 @@ public class GNPublicController {
 	public String myBoats(final Model model, HttpServletRequest request) {
 		List<BoatListView> myBoats = this.boatService.findByUserId(2020, ((UserUI) request.getSession().getAttribute(SimpleUserWebNaming.SESSION_LOGGED_USER)).getUserId());
 		request.setAttribute("boats", myBoats);
+		request.setAttribute("allBoats", Boolean.FALSE);
 		// TODO - Why this shit is not set in the filter?		
 		request.setAttribute(SimpleUserWebNaming.REQUEST_LANG, LocaleContextHolder.getLocale().getLanguage());
 		return "boatList";

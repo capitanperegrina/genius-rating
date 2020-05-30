@@ -6,12 +6,9 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item">
-                            <a class="sidebar-link sidebar-link" href="main.do" aria-expanded="false"><i class="fas fa-home"></i><span class="hide-menu">Home</span></a></li>
+                        <li class="sidebar-item"><a class="sidebar-link sidebar-link" href="main.do" aria-expanded="false"><i class="fas fa-home"></i><span class="hide-menu">Home</span></a></li>
                         <li class="list-divider"></li>
-                        <li class="nav-small-cap">
-                            <span class="hide-menu">Menu</span>
-                        </li>
+                        <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
                         <li class="sidebar-item"><a class="sidebar-link" href="boatList.do" aria-expanded="false"><i class="fas fa-book"></i><span class="hide-menu">Boat List</span></a></li>
 <c:if test="${request_simpleUserManagementLogged != null}">
                         <li class="sidebar-item"><a class="sidebar-link" href="myBoats.do" aria-expanded="false"><i class="fas fa-book"></i><span class="hide-menu">My Boats</span></a></li>
