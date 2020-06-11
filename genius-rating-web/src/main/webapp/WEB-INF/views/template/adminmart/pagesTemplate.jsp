@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
+<%@ include file="/WEB-INF/views/includes/include.jsp" %>
 <!DOCTYPE html>
 
 <html dir="ltr">
@@ -11,10 +11,10 @@
     <meta name="description" content="">
     <meta name="author" content="GeNius Rating v. ${request_simpleUserManagementAppVersion}">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/images/favicon.png">
     <title><spring:message code="common.title"/></title>
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link href="static/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

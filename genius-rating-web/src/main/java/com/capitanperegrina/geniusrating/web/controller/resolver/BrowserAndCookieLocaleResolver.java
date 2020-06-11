@@ -1,4 +1,4 @@
-package com.capitanperegrina.geniusrating.web.config.auxiliar;
+package com.capitanperegrina.geniusrating.web.controller.resolver;
 
 import java.util.Arrays;
 import java.util.Enumeration;

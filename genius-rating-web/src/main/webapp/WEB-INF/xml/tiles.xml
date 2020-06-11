@@ -2,48 +2,48 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-    <definition name="template" template="/WEB-INF/jsp/template/adminmart/adminmart.jsp">
-        <put-attribute name="header" value="/WEB-INF/jsp/template/adminmart/parts/header.jsp" />
-        <put-attribute name="aside" value="/WEB-INF/jsp/template/adminmart/parts/aside.jsp" />
-        <put-attribute name="breadcrumb" value="/WEB-INF/jsp/template/adminmart/parts/breadcrumb.jsp" />
-        <put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/parts/blank.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/jsp/template/adminmart/parts/footer.jsp" />
-        <put-attribute name="modals" value="/WEB-INF/jsp/template/adminmart/parts/modals.jsp" />
-        <put-attribute name="javasctipt" value="/WEB-INF/jsp/template/adminmart/parts/blank.jsp" />
+    <definition name="template" template="/WEB-INF/views/template/adminmart/adminmart.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/template/adminmart/parts/header.jsp" />
+        <put-attribute name="aside" value="/WEB-INF/views/template/adminmart/parts/aside.jsp" />
+        <put-attribute name="breadcrumb" value="/WEB-INF/views/template/adminmart/parts/breadcrumb.jsp" />
+        <put-attribute name="content" value="/WEB-INF/views/template/adminmart/parts/blank.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/views/template/adminmart/parts/footer.jsp" />
+        <put-attribute name="modals" value="/WEB-INF/views/template/adminmart/parts/modals.jsp" />
+        <put-attribute name="javasctipt" value="/WEB-INF/views/template/adminmart/parts/blank.jsp" />
     </definition>
     
     <definition name="message" extends="template">
-		<put-attribute name="javasctipt" value="/WEB-INF/jsp/pages/message.jsp" />
+		<put-attribute name="javasctipt" value="/WEB-INF/views/pages/message.jsp" />
     </definition>
 
     <definition name="main" extends="template">
-		<put-attribute name="content" value="/WEB-INF/jsp/pages/main.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/pages/main.jsp" />
     </definition>
 
     <!-- Simple User -->
     
-    <definition name="pagesTemplate" template="/WEB-INF/jsp/template/adminmart/pagesTemplate.jsp">
-        <put-attribute name="modals" value="/WEB-INF/jsp/template/adminmart/parts/modals.jsp" />
+    <definition name="pagesTemplate" template="/WEB-INF/views/template/adminmart/pagesTemplate.jsp">
+        <put-attribute name="modals" value="/WEB-INF/views/template/adminmart/parts/modals.jsp" />
 	</definition>
 
     <definition name="loginForm" extends="pagesTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/login.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/template/adminmart/pages/login.jsp" />
     </definition>    
 
     <definition name="registerForm" extends="pagesTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/register.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/template/adminmart/pages/register.jsp" />
     </definition>    
 
     <definition name="recoverPassInitForm" extends="pagesTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/recoverPassInit.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/template/adminmart/pages/recoverPassInit.jsp" />
     </definition>    
 
     <definition name="recoverPassExecForm" extends="pagesTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/recoverPassExec.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/template/adminmart/pages/recoverPassExec.jsp" />
     </definition>
     
     <definition name="changePassForm" extends="pagesTemplate">
-		<put-attribute name="content" value="/WEB-INF/jsp/template/adminmart/pages/changePass.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/template/adminmart/pages/changePass.jsp" />
     </definition>
 
 </tiles-definitions>

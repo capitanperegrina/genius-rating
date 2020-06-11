@@ -102,7 +102,6 @@
 		<dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
-		    <scope>provided</scope>
 		</dependency>
             
 		<dependency>
@@ -140,11 +139,6 @@
 	        <groupId>org.slf4j</groupId>
 	        <artifactId>slf4j-api</artifactId>
 	    </dependency>
-	    
-		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-simple</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -162,6 +156,13 @@
 		<finalName>genius-rating-web</finalName>
 		<plugins>
 			<plugin>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <version>2.4</version>
+			    <configuration>
+			        <failOnMissingWebXml>false</failOnMissingWebXml>    
+			    </configuration>
+			</plugin>		
+			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
@@ -176,6 +177,10 @@
 					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -188,20 +193,11 @@
 	<profiles>
 		<profile>
 			<id>des</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<build>
 				<finalName>genius-rating-web-des</finalName>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.tomcat.maven</groupId>
-						<artifactId>tomcat7-maven-plugin</artifactId>
-						<version>2.2</version>
-						<configuration>
-							<url>http://localhost:8080/manager/text</url>
-							<server>TomcatServer</server>
-							<path>/geniusRating-desa</path>
-						</configuration>
-					</plugin>
-				</plugins>
 				<resources>
 					<resource>
 						<directory>src/profiles/resources/des</directory>
@@ -213,18 +209,6 @@
 			<id>pre</id>
 			<build>
 				<finalName>genius-rating-web-pre</finalName>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.tomcat.maven</groupId>
-						<artifactId>tomcat7-maven-plugin</artifactId>
-						<version>2.2</version>
-						<configuration>
-							<url>http://localhost:8080/manager/text</url>
-							<server>TomcatServer</server>
-							<path>/geniusRating-pre</path>
-						</configuration>
-					</plugin>
-				</plugins>
 				<resources>
 					<resource>
 						<directory>src/profiles/resources/pre</directory>
@@ -236,18 +220,6 @@
 			<id>pro</id>
 			<build>
 				<finalName>genius-rating</finalName>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.tomcat.maven</groupId>
-						<artifactId>tomcat7-maven-plugin</artifactId>
-						<version>2.2</version>
-						<configuration>
-							<url>http://localhost:8080/manager/text</url>
-							<server>TomcatServer</server>
-							<path>/geniusRating</path>
-						</configuration>
-					</plugin>
-				</plugins>
 				<resources>
 					<resource>
 						<directory>src/profiles/resources/pro</directory>
@@ -255,5 +227,5 @@
 				</resources>
 			</build>
 		</profile>
-	</profiles>
+	</profiles>	
 </project>

@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.context.i18n.LocaleContextHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
 
@@ -24,6 +25,8 @@ import com.capitanperegrina.utils.net.social.Gravatar;
 @Component("authenticationFilter")
 public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(GeniusRatingAuthenticationFilter.class);
+	
 	// TODO - Read this from somwhere
     private final List<String> publicActions = new ArrayList<>();
     private final List<String> privateActions = new ArrayList<>();
@@ -36,7 +39,7 @@ public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
     @Override
     public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain chain)
             throws IOException, ServletException {
-
+    	
         final HttpServletRequest httpRequest = (HttpServletRequest) request;
 
         final UserUI u = (UserUI) httpRequest.getSession().getAttribute(SimpleUserWebNaming.SESSION_LOGGED_USER);
@@ -52,12 +55,6 @@ public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
             request.setAttribute(SimpleUserWebNaming.REQUEST_USER, u);
             request.setAttribute("gravatarMd5", Gravatar.md5Hex(u.getMail()));
         }
-
-        String qs = "";
-        if (!StringUtils.isEmpty(httpRequest.getQueryString())) {
-            qs = "&" + httpRequest.getQueryString();
-        }
-        request.setAttribute("queryString", qs);
         chain.doFilter(request, response);
     }
 

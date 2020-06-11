@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
-
-<spring:message  code="passwordChange.old.pass.placeholder" var="oldPassPlaceholder"/>
-<spring:message  code="passwordChange.new.pass.placeholder" var="newPassPlaceholder"/>
-
+<%@ include file="/WEB-INF/views/includes/include.jsp" %>
+<spring:message  code="recoverPass.exec.password.placeholder" var="passwordPlaceholder"/>
     <div class="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -21,38 +18,34 @@
         <!-- Login box.scss -->
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            style="background:url(assets/images/big/auth-bg.jpg) no-repeat center center;">
+            style="background:url(static/assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/3.jpg);">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(static/assets/images/big/3.jpg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
                         <div class="text-center">
-                            <img src="assets/images/big/icon.png" alt="wrapkit">
+                            <img src="static/assets/images/big/icon.png" alt="wrapkit">
                         </div>
-                        <h2 class="mt-3 text-center"><spring:message  code="passwordChange.title" /></h2>
-                        <form:form action="changePassRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
+                        <h2 class="mt-3 text-center"><spring:message code="login.recover"/></h2>
+                        <p class="text-center"><spring:message code="recoverPass.exec.help"/></p>
+                        <form:form action="recoverPassExectRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
                         	<form:hidden path="operation" id="userForm_operation"/>                        
+                        	<form:hidden path="mail" id="userForm_mail"/>
+                        	<form:hidden path="recoverCode" id="userForm_recoverCode"/>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="userForm_pass"><spring:message code="passwordChange.old.pass"/></label>
+                                        <label class="text-dark" for="pwd"><spring:message code="login.password"/></label>
 										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
-                                        <form:input class="form-control" type="password" path="pass"  id="userForm_pass" placeholder="${oldPassPlaceholder}"/>
+										<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${passwordPlaceholder}"/>
                                     </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="text-dark" for="userForm_recoverCode"><spring:message code="passwordChange.new.pass"/></label>
-										<small id="error_recoverCode" class="badge badge-default badge-danger form-text text-white float-right"></small>
-										<form:input class="form-control" type="password" path="recoverCode" id="userForm_recoverCode" placeholder="${newPassPlaceholder}"/>
-                                    </div>
-                                </div>
+                                </div>                            
                                 <div class="col-lg-12 text-center">
-                                	<button type="button" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="passwordChange.button"/></button>
+                                	<button type="submit" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="recoverPass.exec.button"/></button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
-                                    <a href="javascript:history.back();" class="text-danger"><spring:message code="simpleUser.back"/></a>
+                                    <a href="javascript:history.back();" class="text-danger"><spring:message code="simpleUser.back"/></a> / <spring:message code="login.noPassword"/> <a href="register.do" class="text-danger"><spring:message code="login.signUp"/></a>
                                 </div>
                             </div>
                         </form:form>
@@ -67,12 +60,12 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="assets/libs/jquery/dist/jquery.min.js "></script>
+    <script src="static/assets/libs/jquery/dist/jquery.min.js "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
-    <script src="assets/capitanperegrina.js "></script>
-    <script src="assets/libs/simple-user/changePass.js "></script>    
+    <script src="static/assets/libs/popper.js/dist/umd/popper.min.js "></script>
+    <script src="static/assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="static/assets/capitanperegrina.js "></script>
+    <script src="static/assets/libs/simple-user/recoverPassExec.js "></script>    
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
