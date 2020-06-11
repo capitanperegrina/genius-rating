@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
+<%@ include file="/WEB-INF/views/includes/include.jsp" %>
 
             <nav class="navbar top-navbar navbar-expand-md">
                 <div class="navbar-header" data-logobg="skin6">
@@ -60,6 +60,7 @@
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<img src="https://www.gravatar.com/avatar/<c:out value="${gravatarMd5}"/>?s=40" alt="<c:out value="${request_simpleUserManagementUser.nick}"/>" class="rounded-circle"/>                                
                                 <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span class="text-dark"><c:out value="${request_simpleUserManagementUser.nick}"/></span></span>
+
                             </a>
                         </li>
 </c:if>                        

@@ -28,14 +28,12 @@ public class GeniusRatingUserInterfaceFilter extends GenericFilterBean {
 	public void doFilter(final ServletRequest request, final ServletResponse response, final FilterChain chain)
 					throws IOException, ServletException {
 		final HttpServletRequest httpRequest = (HttpServletRequest) request;
-
-		String qs = "";
-		if (!StringUtils.isEmpty(httpRequest.getQueryString())) {
-			qs = "&" + httpRequest.getQueryString();
-		}
-		request.setAttribute("queryString", qs);
-		chain.doFilter(request, response);
 		
+        String qs = "";
+        if (!StringUtils.isEmpty(httpRequest.getQueryString())) {
+            qs = "&" + httpRequest.getQueryString();
+        }
+        request.setAttribute("queryString", qs);		
 		httpRequest.getSession().setAttribute(SimpleUserWebNaming.REQUEST_APPVERSION, VersionUtils.obtenVersion());
 		httpRequest.getSession().setAttribute(SimpleUserWebNaming.REQUEST_LANG, LocaleContextHolder.getLocale().getLanguage());
 	}

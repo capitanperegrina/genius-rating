@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
+<%@ include file="/WEB-INF/views/includes/include.jsp" %>
 <spring:message code="login.nick.placeholder" var="loginNickPlaceholder"/>
 <spring:message code="login.mail.placeholder" var="loginMailPlaceholder"/>
 <spring:message code="login.password.placeholder" var="loginPasswordPlaceholder"/>
@@ -21,13 +21,13 @@
         <!-- Login box.scss -->
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-            style="background:url(assets/images/big/auth-bg.jpg) no-repeat center center;">
+            style="background:url(static/assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row text-center">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/3.jpg);">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(static/assets/images/big/3.jpg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
-                        <img src="assets/images/big/icon.png" alt="wrapkit">
+                        <img src="static/assets/images/big/icon.png" alt="wrapkit">
                         <h2 class="mt-3 text-center"><spring:message code="login.signUp.free"/></h2>
                         <form:form action="registerRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
                         	<form:hidden path="operation" id="userForm_operation"/>
@@ -77,12 +77,12 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="assets/libs/jquery/dist/jquery.min.js "></script>
+    <script src="static/assets/libs/jquery/dist/jquery.min.js "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
-    <script src="assets/capitanperegrina.js "></script>
-    <script src="assets/libs/simple-user/register.js "></script>
+    <script src="static/assets/libs/popper.js/dist/umd/popper.min.js "></script>
+    <script src="static/assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="static/assets/capitanperegrina.js "></script>
+    <script src="static/assets/libs/simple-user/register.js "></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

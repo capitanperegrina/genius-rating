@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
+<%@ include file="/WEB-INF/views/includes/include.jsp" %>
 
-<spring:message  code="login.loginString.placeholder" var="loginStringPlaceholder"/>
-<spring:message code="login.password.placeholder" var="passwordPlaceholder"/>
+<spring:message  code="passwordChange.old.pass.placeholder" var="oldPassPlaceholder"/>
+<spring:message  code="passwordChange.new.pass.placeholder" var="newPassPlaceholder"/>
+
     <div class="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -29,35 +30,36 @@
                         <div class="text-center">
                             <img src="assets/images/big/icon.png" alt="wrapkit">
                         </div>
-                        <h2 class="mt-3 text-center"><spring:message code="login.signIn"/></h2>
-                        <p class="text-center"><spring:message code="login.help"/></p>
-                        <form:form action="loginRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
+                        <h2 class="mt-3 text-center"><spring:message  code="passwordChange.title" /></h2>
+                        <form:form action="changePassRest.do" method="post" class="mt-4" modelAttribute="userForm" id="userForm">
                         	<form:hidden path="operation" id="userForm_operation"/>                        
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="userForm_mail"><spring:message code="login.loginString"/></label>
-										<small id="error_mail" class="badge badge-default badge-danger form-text text-white float-right"></small>
-                                        <form:input class="form-control" type="email" path="mail"  id="userForm_mail" placeholder="${loginStringPlaceholder}"/>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label class="text-dark" for="userForm_pass"><spring:message code="login.password"/></label>
+                                        <label class="text-dark" for="userForm_pass"><spring:message code="passwordChange.old.pass"/></label>
 										<small id="error_pass" class="badge badge-default badge-danger form-text text-white float-right"></small>
-										<div class="input-group" id="show_hide_password">
-											<form:input class="form-control" type="password" path="pass" id="userForm_pass" placeholder="${passwordPlaceholder}"/>
+										<div class="input-group" id="show_hide_password1">
+											<form:input class="form-control" type="password" path="pass"  id="userForm_pass" placeholder="${oldPassPlaceholder}"/>
 											<div class="input-group-append">
-                                            	<div class="form-control" id="show_hide_password_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                            	<div class="form-control" id="show_hide_password1_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
                                         	</div>
         								</div>										
                                     </div>
                                 </div>
-                                <div class="col-lg-12 text-center">
-                                	<button type="submit" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="login.signIn"/></button>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="text-dark" for="userForm_recoverCode"><spring:message code="passwordChange.new.pass"/></label>
+										<small id="error_recoverCode" class="badge badge-default badge-danger form-text text-white float-right"></small>
+										<div class="input-group" id="show_hide_password2">
+											<form:input class="form-control" type="password" path="recoverCode" id="userForm_recoverCode" placeholder="${newPassPlaceholder}"/>
+											<div class="input-group-append">
+                                            	<div class="form-control" id="show_hide_password2_btn"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
+                                        	</div>
+        								</div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-12 text-center mt-5">
-                                    <spring:message code="login.noPassword"/> <a href="register.do" class="text-danger"><spring:message code="login.signUp"/></a> / <a href="recoverPassInit.do" class="text-danger"><spring:message code="login.recover"/></a>
+                                <div class="col-lg-12 text-center">
+                                	<button type="button" class="btn btn-block btn-dark" id="userForm_submit"><spring:message code="passwordChange.button"/></button>
                                 </div>
                                 <div class="col-lg-12 text-center mt-5">
                                     <a href="javascript:history.back();" class="text-danger"><spring:message code="simpleUser.back"/></a>
@@ -80,7 +82,7 @@
     <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="assets/capitanperegrina.js "></script>
-    <script src="assets/libs/simple-user/login.js "></script>    
+    <script src="assets/libs/simple-user/changePass.js "></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

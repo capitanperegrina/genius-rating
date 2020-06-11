@@ -1,4 +1,4 @@
-<%@ include file="/WEB-INF/jsp/includes/include.jsp" %>
+<%@ include file="/WEB-INF/views/includes/include.jsp" %>
 
 <c:redirect url="main.do"/>
 
