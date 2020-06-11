@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ include file="/WEB-INF/jsp/includes/include.jsp"%>
+<%@ include file="/WEB-INF/views/includes/include.jsp"%>
 
 <c:if test="${empty boats}">
 	<div class="row">
@@ -60,8 +60,8 @@
 	</div>
 </c:if>
 
-    <script src="assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="assets/libs/genius-rating/boatList.js "></script>
+    <script src="static/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="static/assets/libs/genius-rating/boatList.js "></script>
 
     <script>
     	boatTableSetup("<c:out value='${request_simpleUserManagementLang}'/>");

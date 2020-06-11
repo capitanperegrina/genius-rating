@@ -9,10 +9,10 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -23,7 +23,6 @@ import com.capitanperegrina.simpleuser.web.ui.UserUI;
 import com.capitanperegrina.utils.net.social.Gravatar;
 
 @Component("authenticationFilter")
-@WebFilter(urlPatterns = "*.do")
 public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(GeniusRatingAuthenticationFilter.class);
@@ -56,7 +55,6 @@ public class GeniusRatingAuthenticationFilter extends GenericFilterBean {
             request.setAttribute(SimpleUserWebNaming.REQUEST_USER, u);
             request.setAttribute("gravatarMd5", Gravatar.md5Hex(u.getMail()));
         }
-        LOGGER.debug("fin filtro 1");
         chain.doFilter(request, response);
     }
 

@@ -22,12 +22,12 @@
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url(static/assets/images/big/auth-bg.jpg) no-repeat center center;">
             <div class="auth-box row">
-                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/big/3.jpg);">
+                <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(static/assets/images/big/3.jpg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
                     <div class="p-3">
                         <div class="text-center">
-                            <img src="assets/images/big/icon.png" alt="wrapkit">
+                            <img src="static/assets/images/big/icon.png" alt="wrapkit">
                         </div>
                         <h2 class="mt-3 text-center"><spring:message code="login.signIn"/></h2>
                         <p class="text-center"><spring:message code="login.help"/></p>
@@ -75,12 +75,12 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="assets/libs/jquery/dist/jquery.min.js "></script>
+    <script src="static/assets/libs/jquery/dist/jquery.min.js "></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js "></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
-    <script src="assets/capitanperegrina.js "></script>
-    <script src="assets/libs/simple-user/login.js "></script>    
+    <script src="static/assets/libs/popper.js/dist/umd/popper.min.js "></script>
+    <script src="static/assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="static/assets/capitanperegrina.js "></script>
+    <script src="static/assets/libs/simple-user/login.js "></script>    
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

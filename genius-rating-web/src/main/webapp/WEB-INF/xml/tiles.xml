@@ -21,7 +21,7 @@
     </definition>
 
     <definition name="boatList" extends="template">
-		<put-attribute name="content" value="/WEB-INF/jsp/pages/boatList.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/pages/boatList.jsp" />
     </definition>
     
     
